@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Profit Path Digital | Better Websites. More Leads. Higher Revenue.</title>
+  <meta name="description" content="Profit Path Digital helps small businesses improve websites, generate more leads, and increase revenue through website redesigns, new website builds, sales funnels, and SEO optimization." />
+  <meta name="keywords" content="small business web design, website improvement, website redesign, lead generation websites, sales funnels, SEO optimization, Profit Path Digital" />
+  <meta name="author" content="Profit Path Digital" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Social sharing preview. Replace yourdomain.com and preview-image.jpg after launch. -->
+  <meta property="og:title" content="Profit Path Digital | Better Websites. More Leads. Higher Revenue." />
+  <meta property="og:description" content="Websites, funnels, and SEO built to help small businesses turn visitors into customers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/preview-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Profit Path Digital" />
+  <meta name="twitter:description" content="Better websites. More leads. Higher revenue." />
+  <meta name="twitter:image" content="https://yourdomain.com/preview-image.jpg" />
+
+  <link rel="canonical" href="https://yourdomain.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-soft: #151922;
+      --card: #1b202b;
+      --text: #f6f7fb;
+      --muted: #aab1c2;
+      --line: rgba(255, 255, 255, 0.1);
+      --accent: #45d483;
+      --accent-dark: #24a961;
+      --cream: #f3efe7;
+      --cream-text: #141414;
+      --cream-muted: #5c6270;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--accent);
+      color: #061109;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 900;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 21, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 1.12rem;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #d7ff7a);
+      color: #07120b;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 10px 28px rgba(69, 212, 131, 0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #061109;
+      box-shadow: 0 16px 38px rgba(69, 212, 131, 0.22);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: #5ee998;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 72px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      background: radial-gradient(circle, rgba(69, 212, 131, 0.22), transparent 62%);
+      top: -360px;
+      right: -240px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.9rem);
+      line-height: 0.94;
+      letter-spacing: -0.08em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .trust-row span::before {
+      content: "✓";
+      color: var(--accent);
+      margin-right: 8px;
+      font-weight: 900;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .mock-dashboard {
+      background: #0c0f14;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      padding: 20px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .metric strong {
+      font-size: 1.8rem;
+      letter-spacing: -0.05em;
+      display: block;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .growth-card {
+      background: linear-gradient(135deg, rgba(69, 212, 131, 0.18), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(69, 212, 131, 0.28);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      width: 76%;
+      border-radius: inherit;
+      background: var(--accent);
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -0.07em;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .services-grid,
+    .case-grid,
+    .before-after-grid,
+    .process-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .before-after-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 22px;
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .service-card,
+    .case-card,
+    .step-card,
+    .before-after-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover,
+    .case-card:hover,
+    .step-card:hover,
+    .before-after-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(69, 212, 131, 0.35);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: rgba(69, 212, 131, 0.12);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3,
+    .case-card h3,
+    .step-card h3,
+    .before-after-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .service-card p,
+    .case-card p,
+    .step-card p,
+    .before-after-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .split {
+      background: var(--cream);
+      color: var(--cream-text);
+    }
+
+    .split .section-heading p,
+    .split .case-card p,
+    .split .before-after-card p,
+    .split .step-card p {
+      color: var(--cream-muted);
+    }
+
+    .split .case-card,
+    .split .before-after-card,
+    .split .step-card {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.09);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .case-label {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(69, 212, 131, 0.14);
+      color: #117741;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .concept-note {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: rgba(18, 18, 18, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: #414753;
+      font-size: 0.95rem;
+    }
+
+    .concept-note strong {
+      color: #121212;
+    }
+
+    .ba-preview-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .thumbnail-link {
+      display: block;
+      border-radius: 22px;
+      color: inherit;
+      transition: 0.2s ease;
+    }
+
+    .thumbnail-link:hover,
+    .thumbnail-link:focus-visible {
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .thumbnail-link:focus-visible .site-preview {
+      outline: 3px solid var(--accent-dark);
+      outline-offset: 4px;
+    }
+
+    .site-preview {
+      min-height: 240px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: #f6f6f4;
+      padding: 12px;
+    }
+
+    .before-preview {
+      background: #efeee9;
+    }
+
+    .after-preview {
+      background: #101318;
+      color: #ffffff;
+      border-color: rgba(69, 212, 131, 0.28);
+    }
+
+    .preview-top {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #7a7d84;
+    }
+
+    .after-preview .preview-top {
+      color: var(--accent);
+    }
+
+    .preview-hero {
+      border-radius: 16px;
+      margin-bottom: 12px;
+    }
+
+    .preview-hero.messy {
+      background: #d9d7cd;
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .preview-hero.messy.alt {
+      background: #d7ded1;
+    }
+
+    .preview-hero.messy span {
+      display: block;
+      height: 12px;
+      border-radius: 999px;
+      background: #a5a498;
+    }
+
+    .preview-hero.messy span:nth-child(1) { width: 82%; }
+    .preview-hero.messy span:nth-child(2) { width: 56%; }
+    .preview-hero.messy span:nth-child(3) { width: 72%; }
+
+    .preview-hero.clean {
+      min-height: 92px;
+      background: linear-gradient(135deg, rgba(69, 212, 131, 0.24), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(69, 212, 131, 0.26);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .preview-hero.clean.alt {
+      background: linear-gradient(135deg, rgba(215, 255, 122, 0.18), rgba(255, 255, 255, 0.06));
+    }
+
+    .preview-hero.clean strong {
+      font-size: 0.95rem;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .preview-hero.clean em {
+      align-self: flex-start;
+      font-style: normal;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #061109;
+    }
+
+    .preview-lines {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .preview-lines i {
+      display: block;
+      height: 8px;
+      border-radius: 999px;
+      background: #c5c3b8;
+    }
+
+    .preview-lines i:nth-child(1) { width: 94%; }
+    .preview-lines i:nth-child(2) { width: 62%; }
+    .preview-lines i:nth-child(3) { width: 86%; }
+    .preview-lines i:nth-child(4) { width: 48%; }
+
+    .preview-boxes,
+    .preview-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .preview-boxes b,
+    .preview-feature-grid b {
+      display: block;
+      height: 42px;
+      border-radius: 12px;
+      background: #cac8be;
+    }
+
+    .preview-boxes.uneven b:nth-child(2) {
+      height: 58px;
+    }
+
+    .preview-feature-grid b {
+      height: 54px;
+      background: #1d2430;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .preview-cta {
+      height: 34px;
+      margin-top: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      width: 70%;
+    }
+
+    .ba-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: -4px 0 20px;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: #1f9d63;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 0.86rem;
+      border: 1px solid #1f9d63;
+      transition: 0.2s ease;
+    }
+
+    .mini-btn:hover,
+    .mini-btn:focus-visible {
+      transform: translateY(-2px);
+      background: #16794b;
+    }
+
+    .mini-btn-light {
+      background: #ffffff;
+      color: #121212;
+      border-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .ba-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .ba-details h4 {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .ba-details ul {
+      padding-left: 18px;
+      color: #5c6270;
+      font-size: 0.9rem;
+    }
+
+    .ba-details li + li {
+      margin-top: 5px;
+    }
+
+    .step-number {
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      padding: 70px 0 96px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(69, 212, 131, 0.2), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(69, 212, 131, 0.3);
+      border-radius: 34px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.07em;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .contact {
+      background: #0b0d11;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    form {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+    }
+
+    label {
+      display: block;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      background: #0d1016;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 15px;
+      font: inherit;
+      margin-bottom: 16px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(69, 212, 131, 0.55);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1020px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .contact-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .case-grid,
+      .before-after-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .hero {
+        padding: 64px 0;
+      }
+
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .logo span:last-child {
+        font-size: 0.98rem;
+      }
+
+      .nav .btn-primary {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(2.55rem, 16vw, 4rem);
+      }
+
+      .services-grid,
+      .process-grid,
+      .metric-grid,
+      .ba-preview-row,
+      .ba-details {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn,
+      .cta-box .btn,
+      .ba-actions .mini-btn {
+        width: 100%;
+      }
+
+      .hero-card,
+      .cta-box,
+      form {
+        padding: 22px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+
+
+    /* Compact portfolio cards with screenshot thumbnails */
+    .case-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+      min-height: 100%;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      border-radius: 28px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .case-card:hover,
+    .case-card:focus-visible {
+      transform: translateY(-6px);
+      border-color: rgba(69, 212, 131, 0.45);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.14);
+      outline: none;
+    }
+
+    .case-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 190px;
+      overflow: hidden;
+      background: #101318;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .case-image-wrap img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .case-card:hover .case-image-wrap img,
+    .case-card:focus-visible .case-image-wrap img {
+      transform: scale(1.04);
+      filter: brightness(0.82);
+    }
+
+    .case-hover {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(15, 17, 21, 0.52);
+      color: #ffffff;
+      font-weight: 900;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .case-card:hover .case-hover,
+    .case-card:focus-visible .case-hover {
+      opacity: 1;
+    }
+
+    .case-hover span {
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #061109;
+      box-shadow: 0 16px 38px rgba(69, 212, 131, 0.28);
+      font-size: 0.86rem;
+    }
+
+    .case-content {
+      padding: 22px;
+    }
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .case-tags span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #f3f5f2;
+      color: #3f4652;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 920px) {
+      .case-image-wrap {
+        max-height: 260px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .case-content {
+        padding: 20px;
+      }
+
+      .case-image-wrap {
+        max-height: 210px;
+      }
+    }
+
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Profit Path Digital",
+      "description": "Small business website improvement, website builds, sales funnels, and SEO optimization.",
+      "url": "https://yourdomain.com",
+      "areaServed": "United States",
+      "serviceType": [
+        "Website Improvement",
+        "Website Design",
+        "Sales Funnel Strategy",
+        "SEO Optimization"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="logo" href="#top" aria-label="Profit Path Digital home">
+        <span class="logo-mark">P</span>
+        <span>Profit Path Digital</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="btn btn-primary" href="#contact">Free Website Review</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Small business web design & growth systems</p>
+          <h1>Better websites. More leads. Higher revenue.</h1>
+          <p>
+            Profit Path Digital helps small businesses improve outdated websites, launch professional new sites, and build simple sales systems that turn visitors into real customers.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request a Free Review</a>
+            <a class="btn btn-secondary" href="#portfolio">View Work</a>
+          </div>
+
+          <div class="trust-row" aria-label="Service highlights">
+            <span>Conversion-focused design</span>
+            <span>Mobile-first layouts</span>
+            <span>SEO-ready structure</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Website growth dashboard preview">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <div class="mock-dashboard">
+            <div class="metric-grid">
+              <div class="metric">
+                <strong>Clear</strong>
+                <span>Customer journey</span>
+              </div>
+              <div class="metric">
+                <strong>Fast</strong>
+                <span>Mobile experience</span>
+              </div>
+              <div class="metric">
+                <strong>SEO</strong>
+                <span>Page structure</span>
+              </div>
+              <div class="metric">
+                <strong>Leads</strong>
+                <span>Focused CTA flow</span>
+              </div>
+            </div>
+
+            <div class="growth-card">
+              <strong>Website Growth Path</strong>
+              <p style="color: var(--muted); margin-top: 6px; font-size: .94rem;">Clear message → better layout → stronger leads → higher revenue.</p>
+              <div class="bar" aria-hidden="true"><span></span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What we do</p>
+          <h2>Web services built around business growth.</h2>
+          <p>
+            We do not just make websites look better. We improve the path from visitor to customer with cleaner design, stronger messaging, and better conversion flow.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">01</div>
+            <h3>Website Improvement</h3>
+            <p>Refresh your existing website with cleaner layouts, clearer sections, stronger calls to action, and a better mobile experience.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">02</div>
+            <h3>New Website Builds</h3>
+            <p>Launch a professional, responsive website designed to build trust and guide visitors toward contacting or booking with you.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">03</div>
+            <h3>Sales Funnels</h3>
+            <p>Create simple customer journeys with landing pages, lead forms, offers, and follow-up paths that help turn interest into action.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">04</div>
+            <h3>SEO Optimization</h3>
+            <p>Improve page structure, headings, content clarity, metadata, and local search signals so your website is easier to understand and find.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="split">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Live website portfolio.</h2>
+          <p>
+            A selection of mobile-responsive, SEO-optimized websites built to show strong visual direction, clear navigation, and business-focused user experience.
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <a
+            class="case-card"
+            href="https://hannahburnscoding-byte.github.io/luma-estates-portfolio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Luma Estates real estate website portfolio project"
+          >
+            <div class="case-image-wrap">
+              <img
+                src="lumaestatespic.png"
+                alt="Screenshot of Luma Estates mobile responsive real estate website"
+                loading="lazy"
+              />
+              <div class="case-hover"><span>View Live Website</span></div>
+            </div>
+
+            <div class="case-content">
+              <span class="case-label">Real Estate Website</span>
+              <h3>Luma Estates</h3>
+              <p>
+                A modern real estate website for a polished property brand with strong navigation, listing-focused structure, and SEO-ready page content.
+              </p>
+              <div class="case-tags" aria-label="Project features">
+                <span>Mobile Responsive</span>
+                <span>SEO Optimized</span>
+                <span>Real Estate</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="case-card"
+            href="https://hannahburnscoding-byte.github.io/taniti-travel/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Taniti Travel website portfolio project"
+          >
+            <div class="case-image-wrap">
+              <img
+                src="taniitipic.png"
+                alt="Screenshot of Taniti Travel mobile responsive travel website"
+                loading="lazy"
+              />
+              <div class="case-hover"><span>View Live Website</span></div>
+            </div>
+
+            <div class="case-content">
+              <span class="case-label">Travel Website</span>
+              <h3>Taniti Travel</h3>
+              <p>
+                A tropical travel website built to organize island information, improve navigation, and guide visitors toward activities, lodging, dining, and trip planning.
+              </p>
+              <div class="case-tags" aria-label="Project features">
+                <span>Mobile Responsive</span>
+                <span>SEO Optimized</span>
+                <span>Travel UX</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="case-card"
+            href="https://hannahburnscoding-byte.github.io/luma-estates-portfolio/veloura-jewelry-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Veloura Atelier jewelry website portfolio project"
+          >
+            <div class="case-image-wrap">
+              <img
+                src="velourapic.png"
+                alt="Screenshot of Veloura Atelier high-end jewelry brand website"
+                loading="lazy"
+              />
+              <div class="case-hover"><span>View Live Website</span></div>
+            </div>
+
+            <div class="case-content">
+              <span class="case-label">Luxury Brand Website</span>
+              <h3>Veloura Atelier</h3>
+              <p>
+                A high-end jewelry brand website with a luxury visual direction, editorial-style hero section, product-focused navigation, and responsive structure.
+              </p>
+              <div class="case-tags" aria-label="Project features">
+                <span>Mobile Responsive</span>
+                <span>SEO Optimized</span>
+                <span>Luxury Brand</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Our process</p>
+          <h2>A clear path from website confusion to customer action.</h2>
+          <p>
+            Every project starts with strategy first, so the final website has a clear job: help people understand, trust, and contact your business.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="step-card">
+            <div class="step-number">Step 01</div>
+            <h3>Review</h3>
+            <p>We review your current site, business goals, audience, and the actions you want visitors to take.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">Step 02</div>
+            <h3>Plan</h3>
+            <p>We map out the page structure, messaging, CTA flow, and growth opportunities.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">Step 03</div>
+            <h3>Design</h3>
+            <p>We create a polished, professional layout that fits your brand and feels easy to use.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">Step 04</div>
+            <h3>Build</h3>
+            <p>We build the website or improvements with responsive structure and clean user experience.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">Step 05</div>
+            <h3>Launch</h3>
+            <p>We prepare the site for launch and provide next-step recommendations for growth.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Want to know what your website could be doing better?</h2>
+            <p>Request a free website review and receive practical suggestions for improving trust, clarity, leads, and customer action.</p>
+          </div>
+          <a class="btn btn-primary" href="#contact">Start Free Review</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build your profit path.</h2>
+          <p>
+            Tell us about your business, your current website, and what you want to improve. We’ll review your request and recommend the best next step.
+          </p>
+        </div>
+
+        <form name="website-review" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+
+          <label for="business">Business / Website</label>
+          <input id="business" name="business" type="text" placeholder="Business name or website link" />
+
+          <label for="service">What do you need?</label>
+          <select id="service" name="service">
+            <option>Website improvement</option>
+            <option>New website build</option>
+            <option>Sales funnel</option>
+            <option>SEO optimization</option>
+            <option>Not sure yet</option>
+          </select>
+
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" placeholder="Tell us what you want your website to do better."></textarea>
+
+          <button class="btn btn-primary" type="submit">Request Free Review</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Profit Path Digital. All rights reserved.</p>
+      <p>Better websites. More leads. Higher revenue.</p>
+    </div>
+  </footer>
+</body>
+</html>
