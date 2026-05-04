@@ -10,19 +10,19 @@
   <meta name="author" content="Profit Path Digital" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Social sharing preview. Replace yourdomain.com and preview-image.jpg after launch. -->
+  <!-- Social preview -->
   <meta property="og:title" content="Profit Path Digital | Better Websites. More Leads. Higher Revenue." />
   <meta property="og:description" content="Websites, funnels, and SEO built to help small businesses turn visitors into customers." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:image" content="https://yourdomain.com/preview-image.jpg" />
+  <meta property="og:url" content="https://profit-path-digital.com/" />
+  <meta property="og:image" content="https://profit-path-digital.com/lumaestatespic.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Profit Path Digital" />
   <meta name="twitter:description" content="Better websites. More leads. Higher revenue." />
-  <meta name="twitter:image" content="https://yourdomain.com/preview-image.jpg" />
+  <meta name="twitter:image" content="https://profit-path-digital.com/lumaestatespic.png" />
 
-  <link rel="canonical" href="https://yourdomain.com" />
+  <link rel="canonical" href="https://profit-path-digital.com/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,19 +30,20 @@
 
   <style>
     :root {
-      --bg: #0f1115;
-      --bg-soft: #151922;
+      --bg: #0c0e12;
+      --bg-soft: #12151c;
       --card: #1b202b;
-      --text: #f6f7fb;
-      --muted: #aab1c2;
+      --text: #f8f9fc;
+      --muted: #a9b1c4;
       --line: rgba(255, 255, 255, 0.1);
-      --accent: #45d483;
+      --accent: #3ecf7a;
       --accent-dark: #24a961;
-      --cream: #f3efe7;
-      --cream-text: #141414;
-      --cream-muted: #5c6270;
+      --cream: #f5f2eb;
+      --cream-text: #12151a;
+      --cream-muted: #5a6170;
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
       --radius: 22px;
+      --thumb-h: clamp(172px, 26vw, 228px);
     }
 
     * {
@@ -123,7 +124,7 @@
       display: grid;
       place-items: center;
       font-weight: 900;
-      box-shadow: 0 10px 28px rgba(69, 212, 131, 0.28);
+      box-shadow: 0 10px 28px rgba(62, 207, 122, 0.26);
     }
 
     .nav-links {
@@ -157,7 +158,7 @@
     .btn-primary {
       background: var(--accent);
       color: #061109;
-      box-shadow: 0 16px 38px rgba(69, 212, 131, 0.22);
+      box-shadow: 0 16px 38px rgba(62, 207, 122, 0.22);
     }
 
     .btn-primary:hover,
@@ -189,7 +190,7 @@
       position: absolute;
       width: 760px;
       height: 760px;
-      background: radial-gradient(circle, rgba(69, 212, 131, 0.22), transparent 62%);
+      background: radial-gradient(circle, rgba(62, 207, 122, 0.22), transparent 62%);
       top: -360px;
       right: -240px;
       pointer-events: none;
@@ -304,8 +305,8 @@
     }
 
     .growth-card {
-      background: linear-gradient(135deg, rgba(69, 212, 131, 0.18), rgba(255, 255, 255, 0.04));
-      border: 1px solid rgba(69, 212, 131, 0.28);
+      background: linear-gradient(135deg, rgba(62, 207, 122, 0.18), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(62, 207, 122, 0.28);
       border-radius: 22px;
       padding: 20px;
     }
@@ -359,10 +360,6 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .case-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
     .before-after-grid {
       grid-template-columns: repeat(2, 1fr);
       margin-top: 22px;
@@ -373,29 +370,27 @@
     }
 
     .service-card,
-    .case-card,
     .step-card,
     .before-after-card {
       background: var(--bg-soft);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
-      transition: 0.2s ease;
+      transition: transform 0.22s ease, border-color 0.22s ease;
     }
 
     .service-card:hover,
-    .case-card:hover,
     .step-card:hover,
     .before-after-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(69, 212, 131, 0.35);
+      border-color: rgba(62, 207, 122, 0.35);
     }
 
     .icon {
       width: 44px;
       height: 44px;
       border-radius: 15px;
-      background: rgba(69, 212, 131, 0.12);
+      background: rgba(62, 207, 122, 0.12);
       color: var(--accent);
       display: grid;
       place-items: center;
@@ -404,7 +399,6 @@
     }
 
     .service-card h3,
-    .case-card h3,
     .step-card h3,
     .before-after-card h3 {
       font-size: 1.1rem;
@@ -413,7 +407,6 @@
     }
 
     .service-card p,
-    .case-card p,
     .step-card p,
     .before-after-card p {
       color: var(--muted);
@@ -426,13 +419,16 @@
     }
 
     .split .section-heading p,
-    .split .case-card p,
+    .split .case-content p,
     .split .before-after-card p,
     .split .step-card p {
       color: var(--cream-muted);
     }
 
-    .split .case-card,
+    .section-heading-portfolio .eyebrow {
+      color: #1a8848;
+    }
+
     .split .before-after-card,
     .split .step-card {
       background: #ffffff;
@@ -440,13 +436,138 @@
       box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
     }
 
+    /* Portfolio cards: uniform thumbnails, restrained shadows */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(20px, 3vw, 32px);
+      align-items: stretch;
+    }
+
+    .case-grid .case-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.04),
+        0 16px 40px rgba(17, 24, 39, 0.08);
+      transition:
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+      min-height: 0;
+    }
+
+    .case-grid .case-card:hover,
+    .case-grid .case-card:focus-visible {
+      transform: translateY(-5px);
+      border-color: rgba(62, 207, 122, 0.38);
+      box-shadow:
+        0 1px 0 rgba(62, 207, 122, 0.12),
+        0 26px 55px rgba(17, 24, 39, 0.12);
+      outline: none;
+    }
+
+    .case-image-wrap {
+      position: relative;
+      width: 100%;
+      height: var(--thumb-h);
+      flex-shrink: 0;
+      overflow: hidden;
+      background: linear-gradient(165deg, #1f2937 0%, #111318 100%);
+    }
+
+    .case-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+    }
+
+    .case-grid .case-card:hover .case-image-wrap img,
+    .case-grid .case-card:focus-visible .case-image-wrap img {
+      transform: scale(1.035);
+      opacity: 0.92;
+    }
+
+    .case-hover {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(13, 16, 22, 0.58);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .case-grid .case-card:hover .case-hover,
+    .case-grid .case-card:focus-visible .case-hover {
+      opacity: 1;
+    }
+
+    .case-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.35rem 1.4rem 1.45rem;
+    }
+
+    .case-content .case-label {
+      margin-bottom: 0.65rem;
+    }
+
+    .case-content h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.035em;
+      line-height: 1.22;
+      color: var(--cream-text);
+    }
+
+    .case-content p {
+      flex: 1;
+      margin-bottom: 1.05rem;
+      color: var(--cream-muted);
+      font-size: 0.935rem;
+      line-height: 1.62;
+    }
+
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .case-tags span {
+      font-size: 0.6875rem;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(18, 21, 26, 0.04);
+      color: var(--cream-muted);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
     .case-label {
       display: inline-flex;
       margin-bottom: 18px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(69, 212, 131, 0.14);
-      color: #117741;
+      background: rgba(62, 207, 122, 0.14);
+      color: #157a46;
       font-size: 0.8rem;
       font-weight: 900;
     }
@@ -506,7 +627,7 @@
     .after-preview {
       background: #101318;
       color: #ffffff;
-      border-color: rgba(69, 212, 131, 0.28);
+      border-color: rgba(62, 207, 122, 0.28);
     }
 
     .preview-top {
@@ -551,8 +672,8 @@
 
     .preview-hero.clean {
       min-height: 92px;
-      background: linear-gradient(135deg, rgba(69, 212, 131, 0.24), rgba(255, 255, 255, 0.06));
-      border: 1px solid rgba(69, 212, 131, 0.26);
+      background: linear-gradient(135deg, rgba(62, 207, 122, 0.24), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(62, 207, 122, 0.26);
       padding: 14px;
       display: flex;
       flex-direction: column;
@@ -701,8 +822,8 @@
     }
 
     .cta-box {
-      background: linear-gradient(135deg, rgba(69, 212, 131, 0.2), rgba(255, 255, 255, 0.05));
-      border: 1px solid rgba(69, 212, 131, 0.3);
+      background: linear-gradient(135deg, rgba(62, 207, 122, 0.2), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(62, 207, 122, 0.3);
       border-radius: 34px;
       padding: 46px;
       display: grid;
@@ -768,7 +889,7 @@
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: rgba(69, 212, 131, 0.55);
+      border-color: rgba(62, 207, 122, 0.55);
     }
 
     textarea {
@@ -790,6 +911,18 @@
       flex-wrap: wrap;
     }
 
+    .footer-inner a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-inner a:hover,
+    .footer-inner a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     @media (max-width: 1020px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -807,13 +940,43 @@
         grid-template-columns: 1fr;
       }
 
-      .case-grid,
       .before-after-grid {
         grid-template-columns: 1fr;
       }
 
+      .nav-inner {
+        gap: 10px;
+      }
+
       .nav-links {
+        display: flex;
+        gap: 12px;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
+        max-width: min(420px, 46vw);
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 4px 0;
+        letter-spacing: -0.01em;
+      }
+
+      .nav-links::-webkit-scrollbar {
         display: none;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .nav .btn-primary {
+        flex-shrink: 0;
+        min-height: 44px;
+        padding: 0 16px;
+        font-size: 0.8125rem;
       }
     }
 
@@ -832,10 +995,6 @@
 
       .logo span:last-child {
         font-size: 0.98rem;
-      }
-
-      .nav .btn-primary {
-        display: none;
       }
 
       h1 {
@@ -865,71 +1024,27 @@
       section {
         padding: 64px 0;
       }
-    
-       .case-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
 
-  .case-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-height: 100%;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.09);
-    border-radius: 28px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
+      :root {
+        --thumb-h: 196px;
+      }
+    }
 
-  .case-card:hover,
-  .case-card:focus-visible {
-    transform: translateY(-6px);
-    border-color: rgba(69, 212, 131, 0.45);
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.14);
-    outline: none;
-  }
+    @media (max-width: 960px) {
+      .case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
 
-  .case-image-wrap {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    background: #101318;
-  }
+    @media (max-width: 640px) {
+      .case-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
 
-  .case-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.35s ease, filter 0.35s ease;
-  }
-
-  .case-card:hover .case-image-wrap img,
-  .case-card:focus-visible .case-image-wrap img {
-    transform: scale(1.04);
-    filter: brightness(0.82);
-  }
-
-  .case-hover {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    background: rgba(15, 17, 21, 0.5);
-    color: #ffffff;
-    font-weight: 900;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-  }
-
-  .case-card:hover .case-hover,
-  .case-card:focus-visible .case-hover {
-    opacity: 1;
-  }
+      :root {
+        --thumb-h: 200px;
+      }
+    }
 
 </style>
 
@@ -939,7 +1054,7 @@
       "@type": "ProfessionalService",
       "name": "Profit Path Digital",
       "description": "Small business website improvement, website builds, sales funnels, and SEO optimization.",
-      "url": "https://yourdomain.com",
+      "url": "https://profit-path-digital.com/",
       "areaServed": "United States",
       "serviceType": [
         "Website Improvement",
@@ -1070,88 +1185,111 @@
 
     <section id="portfolio" class="split">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading section-heading-portfolio">
           <p class="eyebrow">Portfolio</p>
-          <h2>Concepts and client-style projects.</h2>
+          <h2>Select work.</h2>
           <p>
-            These case studies show how we approach website strategy, user flow, and visual trust for small business brands.
+            Strategy-forward layouts that prioritize clarity, trust, and a clear path to contact—from property sites to luxury retail concepts.
           </p>
         </div>
 
         <div class="case-grid">
-      <span class="case-label">Real Estate Website</span>
-      <h3>Luma Estates</h3>
-      <p>
-        A modern, mobile-responsive real estate website designed for a polished property brand with strong navigation, listing-focused structure, and SEO-ready page content.
-      </p>
-      <div class="case-tags" aria-label="Project features">
-        <span>Mobile Responsive</span>
-        <span>SEO Optimized</span>
-        <span>Real Estate</span>
-      </div>
-    </div>
-  </a>
+          <a
+            class="case-card"
+            href="https://hannahburnscoding-byte.github.io/luma-estates-portfolio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Luma Estates real estate portfolio project"
+          >
+            <div class="case-image-wrap">
+              <img
+                src="lumaestatespic.png"
+                alt="Screenshot of Luma Estates real estate website homepage"
+                width="960"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="case-hover"><span>View live site</span></div>
+            </div>
+            <div class="case-content">
+              <span class="case-label">Real estate</span>
+              <h3>Luma Estates</h3>
+              <p>
+                Property-focused layout with polished navigation, listing structure, and page content tuned for clarity and SEO.
+              </p>
+              <div class="case-tags" aria-label="Project features">
+                <span>Responsive</span>
+                <span>SEO-ready</span>
+                <span>Listings UX</span>
+              </div>
+            </div>
+          </a>
 
-  <a
-    class="case-card"
-    href="https://hannahburnscoding-byte.github.io/taniti-travel/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="View Taniti Travel website portfolio project"
-  >
-    <div class="case-image-wrap">
-      <img
-        src="taniitipic.png"
-        alt="Screenshot of Taniti Travel mobile responsive travel website"
-        loading="lazy"
-      />
-      <div class="case-hover"><span>View Live Website</span></div>
-    </div>
+          <a
+            class="case-card"
+            href="https://hannahburnscoding-byte.github.io/taniti-travel/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Taniti Travel website portfolio project"
+          >
+            <div class="case-image-wrap">
+              <img
+                src="taniitipic.png"
+                alt="Screenshot of Taniti Travel island travel website"
+                width="960"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="case-hover"><span>View live site</span></div>
+            </div>
+            <div class="case-content">
+              <span class="case-label">Travel &amp; tourism</span>
+              <h3>Taniti Travel</h3>
+              <p>
+                Structured island content, intuitive navigation, and a path from discovery to activities, stays, and dining.
+              </p>
+              <div class="case-tags" aria-label="Project features">
+                <span>Responsive</span>
+                <span>SEO-ready</span>
+                <span>Content UX</span>
+              </div>
+            </div>
+          </a>
 
-    <div class="case-content">
-      <span class="case-label">Travel Website</span>
-      <h3>Taniti Travel</h3>
-      <p>
-        A tropical travel website built to organize island information, improve navigation, and guide visitors toward activities, lodging, dining, and trip planning.
-      </p>
-      <div class="case-tags" aria-label="Project features">
-        <span>Mobile Responsive</span>
-        <span>SEO Optimized</span>
-        <span>Travel UX</span>
-      </div>
-    </div>
-  </a>
-
-  <a
-    class="case-card"
-    href="https://hannahburnscoding-byte.github.io/luma-estates-portfolio/veloura-jewelry-store/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="View Veloura Atelier jewelry website portfolio project"
-  >
-    <div class="case-image-wrap">
-      <img
-        src="velourapic.png"
-        alt="Screenshot of Veloura Atelier high-end jewelry brand website"
-        loading="lazy"
-      />
-      <div class="case-hover"><span>View Live Website</span></div>
-    </div>
-
-    <div class="case-content">
-      <span class="case-label">Luxury E-Commerce Concept</span>
-      <h3>Veloura Atelier</h3>
-      <p>
-        A high-end jewelry brand website concept with a luxury visual direction, editorial-style hero section, product-focused navigation, and mobile-responsive structure.
-      </p>
-      <div class="case-tags" aria-label="Project features">
-        <span>Mobile Responsive</span>
-        <span>SEO Optimized</span>
-        <span>Luxury Brand</span>
-      </div>
-    </div>
-  </a>
-</div>
+          <a
+            class="case-card"
+            href="https://hannahburnscoding-byte.github.io/luma-estates-portfolio/veloura-jewelry-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Veloura Atelier jewelry website portfolio project"
+          >
+            <div class="case-image-wrap">
+              <img
+                src="velourapic.png"
+                alt="Screenshot of Veloura Atelier jewelry brand website"
+                width="960"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="case-hover"><span>View live site</span></div>
+            </div>
+            <div class="case-content">
+              <span class="case-label">Luxury retail</span>
+              <h3>Veloura Atelier</h3>
+              <p>
+                Editorial-style luxury presentation with product-forward hierarchy, refined typography rhythm, and mobile-first layouts.
+              </p>
+              <div class="case-tags" aria-label="Project features">
+                <span>Responsive</span>
+                <span>SEO-ready</span>
+                <span>E-commerce UX</span>
+              </div>
+            </div>
+          </a>
+        </div>
 <!--
         <div class="concept-note">
           <strong>Honest portfolio note:</strong> The examples below are concept redesigns created by Profit Path Digital to demonstrate website strategy, user experience, and conversion-focused design thinking. They are not presented as official client projects, paid engagements, or verified revenue results unless clearly stated.
@@ -1381,7 +1519,11 @@
   <footer>
     <div class="container footer-inner">
       <p>© 2026 Profit Path Digital. All rights reserved.</p>
-      <p>Better websites. More leads. Higher revenue.</p>
+      <p>
+        <a href="https://profit-path-digital.com/">profit-path-digital.com</a>
+        <span aria-hidden="true"> · </span>
+        Better websites. More leads. Higher revenue.
+      </p>
     </div>
   </footer>
 </body>
