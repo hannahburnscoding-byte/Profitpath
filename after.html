@@ -382,15 +382,17 @@
         <aside class="quote-card" id="quote">
           <h2>Request your free service quote</h2>
           <p>Tell us what you need, and we’ll follow up with the best next step.</p>
-          <form class="mini-form">
-            <input type="text" placeholder="Your name" />
-            <input type="email" placeholder="Email address" />
-            <select>
-              <option>Select a service</option>
-              <option>Residential service</option>
-              <option>Commercial service</option>
-              <option>Maintenance</option>
-              <option>Not sure yet</option>
+          <form class="mini-form" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
+            <input type="hidden" name="_subject" value="profit-path-digital.com — Demo quote request (after.html)" />
+            <input type="hidden" name="_next" value="https://www.profit-path-digital.com/" />
+            <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+            <input type="email" name="email" placeholder="Email address" autocomplete="email" required />
+            <select name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Residential service">Residential service</option>
+              <option value="Commercial service">Commercial service</option>
+              <option value="Maintenance">Maintenance</option>
+              <option value="Not sure yet">Not sure yet</option>
             </select>
             <button class="btn" type="submit">Send Request</button>
           </form>
