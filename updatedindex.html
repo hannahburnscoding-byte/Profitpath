@@ -1297,9 +1297,12 @@
           </p>
         </div>
 
-        <form name="website-review" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
-          <input type="hidden" name="_subject" value="profit-path-digital.com — Website review request" />
-          <input type="hidden" name="_next" value="https://www.profit-path-digital.com/?sent=1" />
+        <form name="website-review" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" class="js-web3forms-key" value="" autocomplete="off" />
+          <input type="hidden" name="subject" value="profit-path-digital.com — Website review request" />
+          <input type="hidden" name="from_name" value="Profit Path Digital" />
+          <input type="hidden" name="redirect" value="https://www.profit-path-digital.com/?sent=1" />
+          <input type="checkbox" name="botcheck" value="" style="display:none" tabindex="-1" autocomplete="off" />
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
 
@@ -1333,6 +1336,8 @@
       <p>Better websites. More leads. Higher revenue.</p>
     </div>
   </footer>
+  <script src="js/web3forms-key.js"></script>
+  <script src="js/web3forms-apply.js"></script>
   <script>
     (function () {
       if (new URLSearchParams(location.search).get("sent") !== "1") return;

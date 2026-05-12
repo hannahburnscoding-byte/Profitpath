@@ -382,9 +382,12 @@
         <aside class="quote-card" id="quote">
           <h2>Request your free service quote</h2>
           <p>Tell us what you need, and we’ll follow up with the best next step.</p>
-          <form id="after-quote-form" class="mini-form" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
-            <input type="hidden" name="_subject" value="profit-path-digital.com — Demo quote request (after.html)" />
-            <input type="hidden" name="_next" value="https://www.profit-path-digital.com/" />
+          <form id="after-quote-form" class="mini-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" class="js-web3forms-key" value="" autocomplete="off" />
+            <input type="hidden" name="subject" value="profit-path-digital.com — Demo quote (after.html)" />
+            <input type="hidden" name="from_name" value="Profit Path Digital demo" />
+            <input type="hidden" name="redirect" value="https://www.profit-path-digital.com/" />
+            <input type="checkbox" name="botcheck" value="" style="display:none" tabindex="-1" autocomplete="off" />
             <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
             <input type="email" name="email" placeholder="Email address" autocomplete="email" required />
             <select name="service" required>
@@ -478,5 +481,7 @@
       <p>Smith Brothers Services — Concept redesign example created for portfolio demonstration.</p>
     </div>
   </footer>
+  <script src="js/web3forms-key.js"></script>
+  <script src="js/web3forms-apply.js"></script>
 </body>
 </html>
