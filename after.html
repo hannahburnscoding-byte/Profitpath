@@ -382,9 +382,9 @@
         <aside class="quote-card" id="quote">
           <h2>Request your free service quote</h2>
           <p>Tell us what you need, and we’ll follow up with the best next step.</p>
-          <form class="mini-form" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
+          <form id="after-quote-form" class="mini-form" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
             <input type="hidden" name="_subject" value="profit-path-digital.com — Demo quote request (after.html)" />
-            <input type="hidden" name="_next" value="https://www.profit-path-digital.com/" />
+            <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
             <input type="email" name="email" placeholder="Email address" autocomplete="email" required />
             <select name="service" required>
@@ -478,5 +478,46 @@
       <p>Smith Brothers Services — Concept redesign example created for portfolio demonstration.</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var form = document.getElementById("after-quote-form");
+      if (!form) return;
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var submitLabel = submitBtn ? submitBtn.textContent : "";
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending…";
+        }
+        fetch("https://formsubmit.co/ajax/hello@profit-path-digital.com", {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then(function (res) {
+            return res.text().then(function (text) {
+              var data = {};
+              try {
+                data = text ? JSON.parse(text) : {};
+              } catch (_) {}
+              if (!res.ok)
+                throw new Error((data && data.message) || "Send failed");
+              form.reset();
+              alert("Thanks — we received your request.");
+            });
+          })
+          .catch(function () {
+            alert("Could not send. Email hello@profit-path-digital.com.");
+          })
+          .finally(function () {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = submitLabel;
+            }
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
