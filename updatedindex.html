@@ -1306,7 +1306,7 @@
           </p>
         </div>
 
-        <form id="contact-form" name="website-review" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
+        <form id="contact-form" name="website-review" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST" target="formsubmit_iframe_pp">
           <input type="hidden" name="_subject" value="profit-path-digital.com — Website review request" />
           <input type="hidden" name="_captcha" value="false" />
           <label for="name">Name</label>
@@ -1343,14 +1343,22 @@
       <p>Better websites. More leads. Higher revenue.</p>
     </div>
   </footer>
+  <iframe
+    name="formsubmit_iframe_pp"
+    id="formsubmit_iframe_pp"
+    title="Form submission"
+    style="position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;border:0;padding:0;margin:-1px;overflow:hidden;white-space:nowrap"
+  ></iframe>
   <script>
     (function () {
       var form = document.getElementById("contact-form");
-      if (!form) return;
+      var iframe = document.getElementById("formsubmit_iframe_pp");
+      if (!form || !iframe) return;
 
       var statusEl = document.getElementById("contact-form-status");
       var submitBtn = form.querySelector('button[type="submit"]');
       var submitLabel = submitBtn ? submitBtn.textContent : "";
+      var waitingForIframeLoad = false;
 
       function setStatus(kind, message) {
         if (!statusEl) return;
@@ -1368,54 +1376,41 @@
         statusEl.classList.remove("is-success", "is-error");
       }
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+      form.addEventListener("submit", function () {
         clearStatus();
-
-        var fd = new FormData(form);
+        waitingForIframeLoad = true;
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = "Sending…";
         }
+        clearTimeout(form._submitWatchdog);
+        form._submitWatchdog = setTimeout(function () {
+          if (!waitingForIframeLoad) return;
+          waitingForIframeLoad = false;
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitLabel;
+          }
+          setStatus(
+            "error",
+            "We could not confirm delivery (network or blocker). Try again or email hello@profit-path-digital.com."
+          );
+        }, 60000);
+      });
 
-        fetch("https://formsubmit.co/ajax/hello@profit-path-digital.com", {
-          method: "POST",
-          body: fd,
-          headers: { Accept: "application/json" },
-        })
-          .then(function (res) {
-            return res.text().then(function (text) {
-              var data = {};
-              try {
-                data = text ? JSON.parse(text) : {};
-              } catch (_) {}
-              return { ok: res.ok, status: res.status, data: data, text: text };
-            });
-          })
-          .then(function (result) {
-            if (!result.ok) {
-              var msg =
-                (result.data && (result.data.message || result.data.error)) ||
-                (result.status === 405
-                  ? "This page cannot accept form posts directly. Try again or email hello@profit-path-digital.com."
-                  : "Something went wrong. Please email hello@profit-path-digital.com.");
-              throw new Error(msg);
-            }
-            setStatus(
-              "success",
-              "Thanks — we received your message and will get back to you soon."
-            );
-            form.reset();
-          })
-          .catch(function (err) {
-            setStatus("error", err.message || "Could not send. Try hello@profit-path-digital.com.");
-          })
-          .finally(function () {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = submitLabel;
-            }
-          });
+      iframe.addEventListener("load", function () {
+        if (!waitingForIframeLoad) return;
+        waitingForIframeLoad = false;
+        clearTimeout(form._submitWatchdog);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+        }
+        setStatus(
+          "success",
+          "Thanks — we received your message and will get back to you soon."
+        );
+        form.reset();
       });
     })();
   </script>

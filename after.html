@@ -382,7 +382,7 @@
         <aside class="quote-card" id="quote">
           <h2>Request your free service quote</h2>
           <p>Tell us what you need, and we’ll follow up with the best next step.</p>
-          <form id="after-quote-form" class="mini-form" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST">
+          <form id="after-quote-form" class="mini-form" action="https://formsubmit.co/hello@profit-path-digital.com" method="POST" target="formsubmit_iframe_after">
             <input type="hidden" name="_subject" value="profit-path-digital.com — Demo quote request (after.html)" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
@@ -478,44 +478,51 @@
       <p>Smith Brothers Services — Concept redesign example created for portfolio demonstration.</p>
     </div>
   </footer>
+  <iframe
+    name="formsubmit_iframe_after"
+    id="formsubmit_iframe_after"
+    title="Form submission"
+    style="position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;border:0;padding:0;margin:-1px;overflow:hidden;white-space:nowrap"
+  ></iframe>
   <script>
     (function () {
       var form = document.getElementById("after-quote-form");
-      if (!form) return;
+      var iframe = document.getElementById("formsubmit_iframe_after");
+      if (!form || !iframe) return;
       var submitBtn = form.querySelector('button[type="submit"]');
       var submitLabel = submitBtn ? submitBtn.textContent : "";
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+      var waitingForIframeLoad = false;
+
+      form.addEventListener("submit", function () {
+        waitingForIframeLoad = true;
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = "Sending…";
         }
-        fetch("https://formsubmit.co/ajax/hello@profit-path-digital.com", {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        })
-          .then(function (res) {
-            return res.text().then(function (text) {
-              var data = {};
-              try {
-                data = text ? JSON.parse(text) : {};
-              } catch (_) {}
-              if (!res.ok)
-                throw new Error((data && data.message) || "Send failed");
-              form.reset();
-              alert("Thanks — we received your request.");
-            });
-          })
-          .catch(function () {
-            alert("Could not send. Email hello@profit-path-digital.com.");
-          })
-          .finally(function () {
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = submitLabel;
-            }
-          });
+        clearTimeout(form._submitWatchdog);
+        form._submitWatchdog = setTimeout(function () {
+          if (!waitingForIframeLoad) return;
+          waitingForIframeLoad = false;
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitLabel;
+          }
+          alert(
+            "We could not confirm delivery. Try again or email hello@profit-path-digital.com."
+          );
+        }, 60000);
+      });
+
+      iframe.addEventListener("load", function () {
+        if (!waitingForIframeLoad) return;
+        waitingForIframeLoad = false;
+        clearTimeout(form._submitWatchdog);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+        }
+        form.reset();
+        alert("Thanks — we received your request.");
       });
     })();
   </script>
